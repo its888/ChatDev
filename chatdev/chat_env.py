@@ -221,6 +221,8 @@ class ChatEnv:
             with open(filepath, "wb") as f:
                 f.write(r.content)
                 print("{} Downloaded".format(filepath))
+            print('Waiting out request limit...')
+            time.sleep(15)
 
         regex = r"(\w+.png)"
         joined_codes = self.get_codes()
@@ -264,6 +266,8 @@ class ChatEnv:
             with open(filepath, "wb") as f:
                 f.write(r.content)
                 print("{} Downloaded".format(filepath))
+            print('Waiting out request limit...')
+            time.sleep(15)
 
         regex = r"(\w+.png):(.*?)\n"
         matches = re.finditer(regex, messages, re.DOTALL)

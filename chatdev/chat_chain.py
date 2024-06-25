@@ -154,6 +154,8 @@ class ChatChain:
                                                          config_role=self.config_role,
                                                          model_type=self.model_type,
                                                          log_filepath=self.log_filepath)
+            print('Taking a break before the next call...')
+            time.sleep(5)
             self.chat_env = compose_phase_instance.execute(self.chat_env)
         else:
             raise RuntimeError(f"PhaseType '{phase_type}' is not yet implemented.")
